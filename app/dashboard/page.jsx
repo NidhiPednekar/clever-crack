@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div className='p-10'>
       <h2 className='font-bold text-2xl'>Dashboard</h2>
-      <h2>Create and strat your Mock Interview</h2>
+      <h2>Create and start your Mock Interview</h2>
 
       <div>
         <AddNewInterview/>
