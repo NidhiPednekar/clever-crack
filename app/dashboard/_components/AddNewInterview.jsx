@@ -39,7 +39,44 @@ function AddNewInterview() {
       return;
     }
 
-    const inputPrompt = `Job Description: ${jobDesc}, Job Position: ${jobPos}, Years of experience: ${jobExp}. Give ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions and answers.`;
+    const inputPrompt = `Generate exactly 5 interview questions for a ${jobPos} position requiring ${jobExp} years of experience.
+    Job Description: ${jobDesc}
+    
+    IMPORTANT: You MUST generate EXACTLY 5 questions with 2 line answers. Do not stop at 2 questions.
+    
+    Format each question and answer EXACTLY like this:
+    
+    ### 1. **Question: [Topic]**
+    [The question text]
+    
+    **Answer:**
+    [The 2 line answer]
+    
+    ### 2. **Question: [Different Topic]**
+    [The question text]
+    
+    **Answer:**
+    [The 2 line answer]
+
+     ### 3. **Question: [Different Topic]**
+    [The question text]
+    
+    **Answer:**
+    [The 2 line answer]
+
+     ### 4. **Question: [Different Topic]**
+    [The question text]
+    
+    **Answer:**
+    [The 2 line answer]
+
+     ### 5. **Question: [Different Topic]**
+    [The question text]
+    
+    **Answer:**
+    [The 2 line answer]
+    
+     `;
 
     try {
       const result = await getGeminiResponse(inputPrompt)
